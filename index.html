@@ -1,16 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #b8b9ad;
+      --ink: #1c1c1a;
+      --muted: #6b6b62;
+      --accent: #3a5fd9;
+      --sidebar: 220px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar);
+      height: 100vh;
+      padding: 24px 20px 24px 24px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .sidebar-name {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+
+    .project-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .project-list li {
+      margin-bottom: 6px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .project-list a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .project-list a:hover { opacity: 0.5; }
+    .blue { color: var(--accent); }
+
+    .sidebar-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sidebar-links a {
+      font-size: 13px;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .sidebar-links a:hover { opacity: 0.5; }
+
+    /* Main canvas */
+    .canvas {
+      margin-left: var(--sidebar);
+      min-height: 1100px;
+      position: relative;
+      padding-bottom: 200px;
+    }
+
+    /* Scattered items */
+    .item {
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .item:hover { transform: scale(1.02); z-index: 50; }
+
+    .img-placeholder {
+      display: block;
+      width: 100%;
+    }
+
+    .caption {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 5px;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    /* Positions matching the reference layout */
+    .item-1 { width: 340px; left: 120px; top: 55px; }
+    .item-1 .img-placeholder { height: 270px; background: #8a9080; }
+
+    .item-2 { width: 110px; left: 490px; top: 195px; }
+    .item-2 .img-placeholder { height: 130px; background: #7a8a78; }
+
+    .item-3 { width: 95px; left: 620px; top: 178px; }
+    .item-3 .img-placeholder { height: 120px; background: #9a8870; }
+
+    .item-4 { width: 220px; left: 810px; top: 95px; }
+    .item-4 .img-placeholder { height: 170px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; background: transparent; }
+
+    .item-5 { width: 160px; left: 260px; top: 400px; }
+    .item-5 .img-placeholder { height: 200px; background: #887868; }
+
+    .item-6 { width: 350px; left: 490px; top: 430px; }
+    .item-6 .img-placeholder { height: 240px; background: #7a8878; }
+
+    .item-7 { width: 175px; left: 880px; top: 385px; }
+    .item-7 .img-placeholder { height: 270px; background: #907060; }
+
+    .item-8 { width: 130px; left: 120px; top: 600px; }
+    .item-8 .img-placeholder { height: 160px; background: #788898; }
+
+    .item-9 { width: 350px; left: 490px; top: 720px; }
+    .item-9 .img-placeholder { height: 230px; background: #806870; }
+
+    .item-10 { width: 145px; left: 870px; top: 700px; }
+    .item-10 .img-placeholder { height: 210px; background: #788090; }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+      }
+      .canvas {
+        margin-left: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-height: auto;
+      }
+      .item {
+        position: static !important;
+        width: 100% !important;
+      }
+      .item .img-placeholder { height: 220px !important; display: block !important; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Your content goes here -->
-    <h1>Hello, World!</h1>
-    <p>This is a basic HTML page.</p>
 
-    <a href="about.html">About</a>
-    
+  <aside class="sidebar">
+    <div class="sidebar-name">YOUR NAME</div>
+
+    <ol class="project-list">
+      <li><a href="#">1. Project Title One</a></li>
+      <li><a href="#">2. Project Title Two</a></li>
+      <li><a href="#">3. Project Title Three – <span class="blue">p.1</span></a></li>
+      <li><a href="#">4. Project Title Three – <span class="blue">p.2</span></a></li>
+      <li><a href="#">5. Project Title Four</a></li>
+      <li><a href="#">6. Project Title Five</a></li>
+      <li><a href="#">7. MIXED</a></li>
+    </ol>
+
+    <ul class="sidebar-links">
+      <li><a href="about.html">Information</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Instagram</a></li>
+    </ul>
+  </aside>
+
+  <main class="canvas">
+
+    <div class="item item-1">
+      <div class="img-placeholder"></div>
+      <p class="caption">Project Title Two</p>
+    </div>
+
+    <div class="item item-2">
+      <div class="img-placeholder"></div>
+    </div>
+
+    <div class="item item-3">
+      <div class="img-placeholder"></div>
+    </div>
+
+    <div class="item item-4">
+      <div class="img-placeholder">
+        <div style="background:#6a7a8a;width:100%;height:100%"></div>
+        <div style="background:#7a8a9a;width:100%;height:100%"></div>
+        <div style="background:#5a6a7a;width:100%;height:100%"></div>
+        <div style="background:#8a9aaa;width:100%;height:100%"></div>
+      </div>
+      <p class="caption">Project Title Five</p>
+    </div>
+
+    <div class="item item-5">
+      <div class="img-placeholder"></div>
+      <p class="caption">PROJECT TITLE ONE</p>
+    </div>
+
+    <div class="item item-6">
+      <div class="img-placeholder"></div>
+    </div>
+
+    <div class="item item-7">
+      <div class="img-placeholder"></div>
+      <p class="caption">Project Title Four</p>
+    </div>
+
+    <div class="item item-8">
+      <div class="img-placeholder"></div>
+    </div>
+
+    <div class="item item-9">
+      <div class="img-placeholder"></div>
+      <p class="caption">PROJECT TITLE THREE p2</p>
+    </div>
+
+    <div class="item item-10">
+      <div class="img-placeholder"></div>
+    </div>
+
+  </main>
+
 </body>
 </html>
