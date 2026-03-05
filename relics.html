@@ -138,6 +138,21 @@
       color: var(--ink);
       margin-bottom: 16px;
     }
+    .text-image-row {
+        display: grid;
+     grid-template-columns: 3fr 1fr;
+     gap: 40px;
+     align-items: start;
+     margin-bottom: 48px;
+    }
+
+    .text-image-row .project-body {
+     margin-bottom: 0;
+    }
+
+    .text-image-row .img-block {
+     margin-bottom: 0;
+    }
 
     /* Image layouts */
     .img-block {
@@ -146,8 +161,8 @@
 
     /* Single full-width image */
     .img-full {
-      width: 100%;
-      height: 480px;
+      width: 200px;
+      aspect-ratio: 1/1;
       background: #9a9b90;
       display: flex;
       align-items: center;
@@ -166,11 +181,12 @@
     .img-row {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
+      gap: 30px;
       margin-bottom: 8px;
     }
 
     .img-row .img-item {
+      width: 250px;
       aspect-ratio: 1/1;
       background: #8a8b80;
       overflow: hidden;
@@ -305,31 +321,32 @@
     </div>
 
     <!-- Body text -->
-    <div class="project-body">
-      <p>Write an introduction to your project here. Describe what it is, what inspired it, and what you were exploring. Keep it honest and in your own voice.</p>
-      <p>You can add a second paragraph here with more detail — the process, the context, or anything else you want the viewer to know before they look at the images.</p>
+    <div class="text-image-row">
+  <div class="project-body">
+    <p>Write an introduction...</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="img-block">
+    <div class="img-full">
+      <img src="images/IMG_5910.png" alt="description"/>
     </div>
-
-    <!-- Full width image -->
-    <div class="img-block">
-      <div class="img-full">
-        <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
-        <span class="placeholder-label">IMAGE — replace with your photo</span>
-      </div>
-      <p class="img-caption">Caption for this image if needed</p>
-    </div>
+  </div>
+</div>
 
     <!-- Two images side by side -->
     <div class="img-block">
       <div class="img-row">
         <div class="img-item">
-          <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
+          <img src="images/IMG_1899.png" alt="description"/>
         </div>
         <div class="img-item">
-          <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
+          <img src="images/IMG_1900.png" alt="description"/>
         </div>
         <div class="img-item">
-          <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
+          <img src="images/IMG_1901.png" alt="description"/>
         </div>
       </div>
       <p class="img-caption">Caption for this pair of images</p>
