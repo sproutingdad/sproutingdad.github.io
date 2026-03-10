@@ -92,8 +92,8 @@
     /* Main content */
     .main {
       margin-left: var(--sidebar);
-      padding: 24px 48px 120px 40px;
-      max-width: 900px;
+      padding: 24px 24px 120px 40px;
+      max-width: 1100px;
     }
 
     /* Project header */
@@ -129,7 +129,7 @@
     /* Body text */
     .project-body {
       margin-bottom: 48px;
-      max-width: 560px;
+      max-width: 900px;
     }
 
     .project-body p {
@@ -139,15 +139,18 @@
       margin-bottom: 16px;
     }
     .text-image-row {
-        display: grid;
-     grid-template-columns: 3fr 1fr;
-     gap: 40px;
-     align-items: start;
-     margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: 6fr 2fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 48px;
+      width: 100%;
+      max-width: 100%;
     }
 
     .text-image-row .project-body {
-     margin-bottom: 0;
+      margin-bottom: 0;
+      max-width: 100%;
     }
 
     .text-image-row .img-block {
@@ -162,8 +165,7 @@
     /* Single full-width image */
     .img-full {
       width: 200px;
-      aspect-ratio: 1/1;
-      background: #9a9b90;
+      background: #b8b9ad;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -229,8 +231,8 @@
 
     /* Small inline image */
     .img-small {
-      width: 260px;
-      height: 200px;
+      width: 350px;
+      height: 270px;
       background: #929388;
       overflow: hidden;
       margin-bottom: 8px;
@@ -323,20 +325,27 @@
     <!-- Body text -->
     <div class="text-image-row">
   <div class="project-body">
-    <p>Write an introduction...</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Dirt Relics is an ongoing ceramic practice exploring the relationship between earth and memory.</p>
+    <p>I began making ceramics in 2022 to fulfill my longstanding curiosity about the medium. 
+      As I learned about the prehistoric origins of pottery and the powerful elemental forces that render organic material into non-biodegradable vitrified solids, I began to consider more deeply the environmental and historical impact of my works. 
+      The instinct to produce completed works for the sake of accumulation no longer resonated with me. 
+      The fundamental nature of <em>practice</em> in pottery is the ability to make and remake forms with minimal resource usage. 
+      I have always loved how clay can be infinitely recycled and endlessly reworked until it is fired. I believe the practice of making pottery can teach us to release attachment to objects or concepts that we do not find personal meaning in, reiterate as a process for clarification, and appreciate the unpredictable beauty wrought by extreme natural forces. 
+      The name “Dirt Relics” signifies the transformation of a conventional, often deemed “lesser”, organic matter into a crystallized form that will one day outlive us all.</p>
   </div>
   <div class="img-block">
     <div class="img-full">
-      <img src="images/IMG_5910.png" alt="description"/>
+      <img src="images/relicslogo.png" alt="description" style="margin-top: 45px"/>
     </div>
   </div>
 </div>
 
-    <!-- Two images side by side -->
+ <div class="project-body" style="margin-bottom: 25px;">
+      <em>Selected works</em>
+    </div>
+
+
+    <!-- Three images side by side -->
     <div class="img-block">
       <div class="img-row">
         <div class="img-item">
@@ -349,7 +358,7 @@
           <img src="images/IMG_1901.png" alt="description"/>
         </div>
       </div>
-      <p class="img-caption">Caption for this pair of images</p>
+      <p class="img-caption">Porcelain, speckled stoneware</p>
     </div>
 
     <!-- Middle text -->
@@ -357,29 +366,47 @@
       <p>You can add more text between images if you want to break up the page or add context to specific photos.</p>
     </div>
 
-    <!-- Three image layout (one big, two small) -->
+    <!-- Three image layout -->
     <div class="img-block">
-      <div class="img-trio">
-        <div class="img-main">
-          <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
+      <div class="img-row">
+        <div class="img-item">
+          <img src="images/bow.png" alt="description"/>
         </div>
-        <div class="img-side">
-          <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
+        <div class="img-item">
+          <img src="images/orchid.png" alt="description"/>
         </div>
-        <div class="img-side">
-          <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
+        <div class="img-item">
+          <img src="images/clover.png" alt="description"/>
         </div>
       </div>
-      <p class="img-caption">Caption for this group</p>
+      <p class="img-caption">Speckled stoneware, white stoneware</p>
+    </div>
+
+    <div class="project-body" style="margin-bottom: 18px;">
+      <em>Exhibitions</em>
+    </div>
+
+    <div class="project-body">
+      <p>2025 &nbsp; <em>Cozy Village</em>, Pyperbleu Collective, Brooklyn, NY</p>
+      <p>2025 &nbsp; <em>In Good Company</em>, Pyperbleu Collective, Brooklyn, NY</p>
     </div>
 
     <!-- Single small image -->
     <div class="img-block">
       <div class="img-small">
-        <!-- Replace with: <img src="your-image.jpg" alt="description"/> -->
+        <img src="images/IMG_0683.png" alt="description"/>
       </div>
-      <p class="img-caption">A smaller detail image</p>
+      <p class="img-caption">In Good Company, Pyperbleu Collective, 2025</p>
     </div>
+
+    <div class="img-block" style="float: right; margin-top: -120px; margin-right: 120px; margin-bottom: -40px;clear: none;">
+     <div class="img-small" style="width: 270px; height: 340px; overflow: hidden;">
+      <img src="images/ingoodcompany.jpg" alt="description" style="width: 100%; height: 100%; object-fit: cover;"/>
+     </div>
+      <p class="img-caption">Photo: @ifeelsafeherewithyou</p>
+    </div>
+
+    <div style="clear: both;"></div>
 
     <!-- Prev / Next navigation -->
     <div class="project-nav">
