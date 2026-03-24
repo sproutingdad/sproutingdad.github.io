@@ -181,11 +181,10 @@
 
     /* Two images stacked */
     .img-stack-text-row {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 40px;
-        align-items: start;
-            margin-bottom: 48px;
+     display: flex;
+      flex-direction: column; 
+      gap: 15px;
+      margin-bottom: 48px;
     }
 
     .img-stack {
@@ -217,7 +216,7 @@
 
     .img-text-row .img-large {
         width: 430px;
-        height: 460px;
+        height: 500px;
         overflow: hidden;
     }
 
@@ -381,7 +380,14 @@
     </div>
 
     <!-- image stack layout -->
+    <div class="img-text-row">
+      <div class="img-large" style="height: 600px">
+        <img src="images/IMG_quatrefoil.png" alt="description"/>
+      </div>
     <div class="img-stack-text-row">
+    <div class="project-body">
+        <p>Quatrefoil </br>Time and weather display. 3D-printed case designed in Fusion, display designed in Figma, raspberry pi programmed using Python.</p>
+    </div>
     <div class="img-stack">
         <div class="img-square" style="height: 200px;">
             <img src="images/quatrefoil.png" alt="description"/>
@@ -390,9 +396,7 @@
             <img src="images/IMG_1947.png" alt="description"/>
         </div>
     </div>
-    <div class="project-body">
-        <p>Design for a clock and weather display. Modeled in Fusion 360, Raspberry pi display programmed in Python. <br> &lt;In progress&gt;</p>
-    </div>
+   
 </div>
 
 
